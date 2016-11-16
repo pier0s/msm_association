@@ -5,6 +5,8 @@ class Movie < ApplicationRecord
 
   # Validations
 
+  validates :duration, :numericality => { :less_than => 2764800, :greater_than => 0 }
+
   validates :title, :uniqueness => { :scope => [:year] }
 
   validates :title, :presence => true
